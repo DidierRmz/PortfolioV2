@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>KFC</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script>
+
+        const languajes = [{
+            idioma: "Español"
+        },
+        {
+            idioma: "Ingles"
+        }]
+
+        const theme = [{
+            tema: "Claro"
+        },
+        {
+            tema: "Oscuro"
+        },
+        {
+            tema: "DarkBlue"
+        }
+        ]
+
+
+
+        const burgers = [{
+            image: "images/hamburguesa-1.webp",
+            precioBurger: "$ 8.900",
+            nombreBurger: "BBQ Crunch",
+            descripcionBurguer: "1 Sándwich BBQ Crunch (1 Filete de pollo apando)",
+        },
+        {
+            image: "images/hamburguesa-2.webp",
+            precioBurger: "$ 15.900",
+            nombreBurger: "Kentucky Sandwich",
+            descripcionBurguer: "1 Kentucky hamburguesa / Sándwich (1 Filete de pechuga de pollo apanado, pepinillos,...",
+        },
+        {
+            image: "images/hamburguesa-3.webp",
+            precioBurger: "$ 15.900",
+            nombreBurger: "Combo BBQ Crunch",
+            descripcionBurguer: "1 Sándwich BBQ Crunch (1 Filete de pollo apando) + 1 Papa Pequeña + Gaseosa PET...",
+        },
+        {
+            image: "images/hamburguesa-4.webp",
+            precioBurger: "$ 16.900",
+            nombreBurger: "Kentucky Coronel Sandwich",
+            descripcionBurguer: "1 Kentucky Coronel hamburguesa / Sándwich (1 Filete de pechuga de pollo apando, Ensalada...",
+        },
+        {
+            image: "images/hamburguesa-5.webp",
+            precioBurger: "$ 21.900",
+            nombreBurger: "Combo Kentucky Sandwich",
+            descripcionBurguer: "1 Kentucky hamburguesa / Sándwich (1 Filete de pechuga de pollo apanado, pepinillos,...",
+        },
+        {
+            image: "images/hamburguesa-6.webp",
+            precioBurger: "$ 22.900",
+            nombreBurger: "Combo Kentucky Coronel Sándwich",
+            descripcionBurguer: "1 Kentucky hamburguesa / Sándwich (1 Filete de pechuga de pollo apanado, pepinillos,...)",
+        },
+        {
+            image: "images/hamburguesa-7.webp",
+            precioBurger: "$ 23.900",
+            nombreBurger: "Sándwich Crispy BBQ",
+            descripcionBurguer: "1 Sándwich Crispy BBQ (1 Filete de pechiga extra grande, triple empanizado, cebolla crisp...)",
+        },
+        {
+            image: "images/hamburguesa-8.webp",
+            precioBurger: "$ 8.900",
+            nombreBurger: "Combo Sándwich Crispy BBQ",
+            descripcionBurguer: "1 Sándwich Crispy BBQ (1 Filete de pechuga extra grande, triple empanizado, cebolla crip...)",
+        }
+        ]
+
+        let root = document.getElementById("root");
+
+
+
+        //container HEADER
+        let containerHeader = document.createElement("div");
+        containerHeader.classList.add("container");
+        root.appendChild(containerHeader);
+
+        //row HEADER
+        let rowHeader = document.createElement("div");
+        rowHeader.classList.add("row");
+        containerHeader.appendChild(rowHeader);
+
+        //col HEADER
+        let colHeader = document.createElement("div");
+        colHeader.classList.add("col-md-12");
+        rowHeader.appendChild(colHeader);
+
+        //Header
+        let header = document.createElement("header");
+        header.classList.add("py-5");
+        colHeader.appendChild(header);
+
+        //img HEADER
+        let imgHeader = document.createElement("img");
+        imgHeader.setAttribute("src", "images/KFC_Logo.svg.png");
+        imgHeader.style.width = "30%";
+        header.appendChild(imgHeader);
+
+
+        //Selectores
+
+        //container HEADER
+        let containerSelc = document.createElement("div");
+        containerSelc.classList.add("container");
+        root.appendChild(containerSelc);
+
+        //row HEADER
+        let rowSelc = document.createElement("div");
+        rowSelc.classList.add("row");
+        containerSelc.appendChild(rowSelc);
+
+        //col HEADER
+        let colSelc = document.createElement("div");
+        colSelc.classList.add("col-md-6");
+        rowSelc.appendChild(colSelc);
+
+        //selector
+
+
+
+        //container MAIN
+        let container = document.createElement("div");
+        container.classList.add("container");
+        root.appendChild(container);
+
+        //row MAIN
+        let row = document.createElement("div");
+        row.classList.add("row");
+        container.appendChild(row);
+
+
+        for (const burger of burgers) {
+
+            //col
+            let col = document.createElement("div");
+            col.classList.add("card-group", "col-md-3");
+            row.appendChild(col);
+
+            //card
+            let card = document.createElement("div");
+            card.classList.add("card", "mt-5", "mb-3", "p-3");
+            col.appendChild(card);
+
+            //img card
+            let img = document.createElement("img");
+            img.classList.add("img-fluid");
+            img.setAttribute("src", burger.image);
+            card.appendChild(img);
+
+            //card-body
+            let cardBody = document.createElement("div");
+            cardBody.classList.add("card-body");
+            card.appendChild(cardBody);
+
+            //Atributtes
+            let precioBurger = document.createElement("span");
+            precioBurger.innerText = burger.precioBurger;
+            cardBody.appendChild(precioBurger)
+
+            let nombreBurger = document.createElement("h2");
+            nombreBurger.innerHTML = burger.nombreBurger;
+            cardBody.appendChild(nombreBurger)
+
+            let descripcionBurguer = document.createElement("p");
+            descripcionBurguer.innerHTML = burger.descripcionBurguer;
+            cardBody.appendChild(descripcionBurguer)
+
+            //button
+            let buttonBuy = document.createElement("button");
+            buttonBuy.classList.add("btn", "btn-buy", "btn-danger", "mt-3");
+            buttonBuy.innerText = "Comprar";
+            card.appendChild(buttonBuy)
+        }
+
+
+    </script>
+</body>
+
+</html>
